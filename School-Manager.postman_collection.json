@@ -1,0 +1,336 @@
+{
+	"id": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+	"name": "School-Manager",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "ACTIVITY",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"order": [
+				"ca2e1905-ef30-ff8c-389b-80f6135c2027",
+				"85d3de47-ff1f-1fbd-25c3-5d6a806ca0d5",
+				"60960db6-dc5c-55af-a7a9-b703507faae5",
+				"6484e7c9-6ba2-4055-9530-5fb02f62c549",
+				"80ebc9e0-ceed-19af-f4f5-23385ae674e1",
+				"aadae6f6-6ea8-4406-8f09-36832de5cdaf"
+			],
+			"owner": "13616223",
+			"folders_order": [],
+			"id": "b53314f7-074d-ca86-6cf1-011ef5293990"
+		},
+		{
+			"name": "STUDENT",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"order": [
+				"68fe8e42-4550-cb82-d290-17bcca58208f",
+				"e493f62d-e2bd-a8ac-9d4c-1f9c35b0f5ee"
+			],
+			"owner": "13616223",
+			"folders_order": [],
+			"id": "2323a571-516f-99dc-5048-0ce1bd7999b8"
+		},
+		{
+			"name": "TEACHER",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"order": [
+				"34e7b51c-a800-f6a8-8779-387433bd2293"
+			],
+			"owner": "13616223",
+			"folders_order": [],
+			"id": "a5c5f6bb-79a8-68c1-9265-f893e49ff385"
+		}
+	],
+	"folders_order": [
+		"2323a571-516f-99dc-5048-0ce1bd7999b8",
+		"b53314f7-074d-ca86-6cf1-011ef5293990",
+		"a5c5f6bb-79a8-68c1-9265-f893e49ff385"
+	],
+	"timestamp": 1618002496394,
+	"owner": "13616223",
+	"public": false,
+	"requests": [
+		{
+			"id": "34e7b51c-a800-f6a8-8779-387433bd2293",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8082/api/teacher/v1/submitGrade",
+			"folder": "b53314f7-074d-ca86-6cf1-011ef5293990",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618016788678,
+			"name": "submit evaluation",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": "{  \n\t\"grade\": 10,\n  \"situation\": \"aprovado\",\n  \"submitionId\": \"6070ce8b6770442bc50d58ec\"\n}"
+		},
+		{
+			"id": "60960db6-dc5c-55af-a7a9-b703507faae5",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/activity/v1/activities/all",
+			"folder": "b53314f7-074d-ca86-6cf1-011ef5293990",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618003297997,
+			"name": "get all activities",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "6484e7c9-6ba2-4055-9530-5fb02f62c549",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/activity/v1/activities/AAAA121212",
+			"folder": "b53314f7-074d-ca86-6cf1-011ef5293990",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618006026903,
+			"name": "get activities by classId",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "68fe8e42-4550-cb82-d290-17bcca58208f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8081/api/student/v1/submission",
+			"folder": "2323a571-516f-99dc-5048-0ce1bd7999b8",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618019099167,
+			"name": "submission",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": "{\n  \"activityId\": \"6070c9d0a120aa5c8ea6b23e\",\n  \"answers\": [\n    {\n      \"description\": \"bladeokfekofe\",\n      \"number\": 1\n    },\n    {\n      \"description\": \"lorem ipsim\",\n      \"number\": 2\n    }\n  ],\n  \"studentId\": \"string\",\n  \"submissionDate\": \"2021-04-09T21:07:12.096Z\"\n}"
+		},
+		{
+			"id": "80ebc9e0-ceed-19af-f4f5-23385ae674e1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/activity/v1/activities/AAAA121212/Active",
+			"folder": "b53314f7-074d-ca86-6cf1-011ef5293990",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618016794939,
+			"name": "get activities by classId and status",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "85d3de47-ff1f-1fbd-25c3-5d6a806ca0d5",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/activity/v1/activities",
+			"folder": "b53314f7-074d-ca86-6cf1-011ef5293990",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618006117171,
+			"name": "create new activity",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": "{\n  \"classId\": \"AAAA121212\",\n  \"createdAt\": \"2021-04-09T21:12:34.275Z\",\n  \"createdFor\": \"string\",\n  \"deadline\": \"2021-04-09T21:12:34.275Z\",\n  \"lastModified\": \"2021-04-09T21:12:34.275Z\",\n  \"lastModifiedFor\": \"string\",\n  \"questions\": [\n    {\n      \"descrition\": \"descr questao um\",\n      \"number\": 1,\n      \"targetScore\": 2\n    },\n    {\n      \"descrition\": \"descr questao dois\",\n      \"number\": 1,\n      \"targetScore\": 2\n    }\n  ],\n  \"status\": \"Active\",\n  \"subject\": \"Banco de dados\",\n  \"title\": \"Assessment\",\n  \"visibility\": true\n}"
+		},
+		{
+			"id": "aadae6f6-6ea8-4406-8f09-36832de5cdaf",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/activity/v1/activities/string",
+			"folder": "b53314f7-074d-ca86-6cf1-011ef5293990",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618016791587,
+			"name": "delete activity by id",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "ca2e1905-ef30-ff8c-389b-80f6135c2027",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/activity/v1/submission",
+			"folder": "2323a571-516f-99dc-5048-0ce1bd7999b8",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618016797517,
+			"name": "submission",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": "{\n  \"activityId\": \"string\",\n  \"answers\": [\n    {\n      \"description\": \"string\",\n      \"number\": 0\n    }\n  ],\n  \"id\": \"string\",\n  \"studentId\": \"string\",\n  \"submissionDate\": \"2021-04-09T21:14:57.869Z\"\n}"
+		},
+		{
+			"id": "e493f62d-e2bd-a8ac-9d4c-1f9c35b0f5ee",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8081/api/student/v1/activities/all",
+			"folder": "2323a571-516f-99dc-5048-0ce1bd7999b8",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618019058538,
+			"name": "get activities by class",
+			"description": "",
+			"collectionId": "a1800fd7-01fe-17de-5ffd-43a96d822e39",
+			"responses": [],
+			"rawModeData": "{\n  \"activityId\": \"string\",\n  \"answers\": [\n    {\n      \"description\": \"string\",\n      \"number\": 0\n    }\n  ],\n  \"studentId\": \"string\",\n  \"submissionDate\": \"2021-04-09T21:07:12.096Z\"\n}"
+		}
+	]
+}

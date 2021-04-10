@@ -1,0 +1,25 @@
+# Feign
+feign:
+  compression:
+    request:
+      mime-types: "application/json"
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+integration:
+  base:
+    url: "localhost:8080"
+
+
+server:
+  port: 8081
+
+
+# Logging
+logging:
+  level:
+    org.springframework.cloud: 'INFO'
+    com.schoolmanager: 'INFO'
