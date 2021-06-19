@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/activity
+
+  rabbitmq:
+    addresses: amqp://localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        defaultOutput:
+          destination: exchange_activity_sender_request
+
+
+server:
+  port: 8080
+
+# Logging
+logging:
+  level:
+    org.springframework.cloud: 'INFO'
+    com.schoolmanager: 'INFO'
