@@ -11,6 +11,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Question {
     private Integer number;
-
     private String descrition;
 }
