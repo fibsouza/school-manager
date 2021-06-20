@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/student/v1")
+@RequestMapping(value = "/api/v1/student")
 @Api(value = "School Management - Student API")
 @AllArgsConstructor
 public class SubmissionController {
