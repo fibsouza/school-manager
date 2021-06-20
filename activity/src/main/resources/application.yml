@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/activity
+      uri: mongodb://localhost:27017/school
 
   rabbitmq:
     addresses: amqp://localhost
@@ -14,9 +14,8 @@ spring:
         defaultOutput:
           destination: exchange_activity_sender_request
 
-
 server:
-  port: 8080
+  port: 8089
 
 # Logging
 logging:
