@@ -1,7 +1,6 @@
 package com.schoolmanager.activity.interfaces.rest;
 
 import com.schoolmanager.activity.application.EvaluationService;
-import com.schoolmanager.activity.domain.Activity;
 import com.schoolmanager.activity.domain.Evaluation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/activity/v1")
+@RequestMapping(value = "/api/v1/activity")
 @Api(value = "School Management - Evaluation API")
 @RequiredArgsConstructor
 public class EvaluationController {
