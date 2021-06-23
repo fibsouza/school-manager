@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,19 +37,19 @@ public class StudentController {
     @PostMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Student> createStudent(@RequestBody Student student){
+    public ResponseEntity<String> createStudent(@RequestBody @Valid Student student){
         Student studentResponse = service.create(student);
         if(studentResponse == null){
-           ResponseEntity.status(HttpStatus.NO_CONTENT).body("Student was not created because they already exists!");
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(studentResponse);
+        return ResponseEntity.status(HttpStatus.CREATED).body(studentResponse.toString());
     }
 
     @ApiOperation(value = "Update an student", notes = "This endpoint is used to update student register")
     @PutMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Student> update(@RequestHeader("cpf") String cpf, @RequestBody Student student){
+    public ResponseEntity<Student> update(@RequestHeader("cpf") String cpf, @RequestBody @Valid Student student){
         Student studentResponse = service.update(cpf , student);
         if(studentResponse == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -58,20 +59,23 @@ public class StudentController {
 
     @ApiOperation(value = "Find by cpf", notes = "This endpoint is used to search student by cpf")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getStudentById(@RequestHeader("cpf") String cpf){
+    public ResponseEntity<Student> getStudentById(@RequestHeader("cpf") String cpf){
         Optional<Student> student = service.getStudentById(cpf);
-        student.ifPresent(value -> ResponseEntity.status(HttpStatus.OK).body(value));
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student not found");
+
+        if(student.isPresent()){
+           return new ResponseEntity<>(student.get(), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @ApiOperation(value = "Find all", notes = "This endpoint is used to search all students")
     @GetMapping(value="/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Student>> getAllStudents(){
         List<Student> students = service.getAllStudents();
-        if(students == null){
+        if(students.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(students, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Find by classId", notes = "This endpoint is used to search student based on classId")
@@ -79,10 +83,10 @@ public class StudentController {
     public ResponseEntity<List<Student>> getStudentsByClass(@RequestHeader("classId") String classId){
         List<Student> students = service.getStudentsByClass(classId);
 
-        if(students == null){
+        if(students.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(students, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
     @ApiOperation(value = "Delete student", notes = "This endpoint is used to delete an student register")

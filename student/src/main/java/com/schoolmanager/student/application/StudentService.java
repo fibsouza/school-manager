@@ -21,7 +21,6 @@ public class StudentService {
         if (studentResponse.isPresent()){
             return null;
         }
-        log.info("Class: {}", student.getClassId());
         return repository.save(student);
     }
 
