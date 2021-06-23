@@ -11,26 +11,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/student/v1")
+@RequestMapping(value = "/api/v1/student/activities")
 @Api(value = "School Management - Student API")
 @AllArgsConstructor
 public class ActivityController {
 
     private final ActivityService service;
 
-    @GetMapping(value="/activities/all")
-    public List<Activity> getAllActivities(){
-        return service.getAllActivities();
+    @GetMapping(value="/all")
+    public ResponseEntity<List<Activity>> getAllActivities(){
+        return ResponseEntity.status(HttpStatus.OK).body(service.getAllActivities());
     }
 
-    @GetMapping(value="/activities/{classId}")
-    public List<Activity> getActivitiesByClass(@PathVariable String classId){
-        return service.getActivitiesByClass(classId);
+    @GetMapping(value="/{classId}")
+    public ResponseEntity<List<Activity>> getActivitiesByClass(@PathVariable String classId){
+        return ResponseEntity.status(HttpStatus.OK).body(service.getActivitiesByClass(classId));
     }
 
-    @GetMapping(value="/activities/{classId}/{status}")
-    public List<Activity> getActivitiesByClass(@PathVariable String classId, @PathVariable String status){
-        return service.getActivitiesByClassAndStatus(classId, status);
+    @GetMapping(value="/{classId}/{status}")
+    public ResponseEntity<List<Activity>>getActivitiesByClass(@PathVariable String classId, @PathVariable String status){
+        return ResponseEntity.status(HttpStatus.OK).body(service.getActivitiesByClassAndStatus(classId, status));
     }
 
 }
