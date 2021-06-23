@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(value = "/api/activity/v1")
+@RequestMapping(value = "/api/v1/activity/activities")
 @Api(value = "School Management - Activity API")
 @RequiredArgsConstructor
 public class ActivityController {
@@ -30,7 +30,7 @@ public class ActivityController {
             @ApiResponse(code = 400, message = "Invalid request"),
             @ApiResponse(code = 500, message = "Unexpected error"),
             @ApiResponse(code = 502, message = "Communication failure")})
-    @PostMapping(value="/activities",
+    @PostMapping(value="/",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Activity> createActivity(@RequestBody Activity activity){
@@ -45,7 +45,7 @@ public class ActivityController {
             @ApiResponse(code = 404, message = "Activity not found"),
             @ApiResponse(code = 500, message = "Unexpected error"),
             @ApiResponse(code = 502, message = "Communication failure")})
-    @PutMapping(value = "/activities/{id}",
+    @PutMapping(value = "/{id}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Activity> update(@PathVariable String id, @RequestBody Activity activity){
@@ -56,7 +56,7 @@ public class ActivityController {
         return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
     }
 
-    @GetMapping(value="/activities/all")
+    @GetMapping(value="/all")
     public ResponseEntity<List<ActivityResponse>> getAllActivities(){
         List<ActivityResponse> activityResponse = service.getAllActivities();
         if(activityResponse == null){
@@ -65,7 +65,7 @@ public class ActivityController {
         return new ResponseEntity<>(activityResponse, HttpStatus.ACCEPTED);
     }
 
-    @GetMapping(value="/activities/{classId}")
+    @GetMapping(value="/{classId}")
     public ResponseEntity<List<ActivityResponse>> getActivitiesByClass(@PathVariable String classId){
         List<ActivityResponse> activityResponse = service.getActivitiesByClass(classId);
 
@@ -75,7 +75,7 @@ public class ActivityController {
         return new ResponseEntity<>(activityResponse, HttpStatus.ACCEPTED);
     }
 
-    @GetMapping(value="/activities/{classId}/{status}")
+    @GetMapping(value="/{classId}/{status}")
     public ResponseEntity<List<ActivityResponse>> getActivitiesByClass(@PathVariable String classId, @PathVariable String status){
         List<ActivityResponse> activityResponse =  service.getActivitiesByClassAndStatus(classId, status);
 

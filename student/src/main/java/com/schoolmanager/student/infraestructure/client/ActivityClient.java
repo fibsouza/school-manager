@@ -1,7 +1,6 @@
 package com.schoolmanager.student.infraestructure.client;
 
 import com.schoolmanager.student.domain.Activity;
-import com.schoolmanager.student.domain.Submission;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name="activity", url="${integration.base.url}/api/activity/v1/activities")
+@FeignClient(name="activity", url="${integration.base.url}/api/v1/activity/activities")
 public interface ActivityClient {
 
     @GetMapping(value = "/all",

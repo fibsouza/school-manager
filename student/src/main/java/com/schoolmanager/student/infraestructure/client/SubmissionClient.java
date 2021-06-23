@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(name="submission", url="${integration.base.url}")
 public interface SubmissionClient {
 
-    @PostMapping(value = "/api/activity/v1/submission",
+    @PostMapping(value = "/api/v1/activity/submission",
             produces = {MediaType.APPLICATION_JSON_VALUE},
             consumes = {MediaType.APPLICATION_JSON_VALUE})
     Submission submitAnsewers(@RequestBody Submission submission);
